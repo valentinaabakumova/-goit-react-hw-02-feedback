@@ -45,9 +45,9 @@ class Interface extends Component {
         <Section title={'leave feedback:'}>
           <Feedback options={options} onLeaveFeedback={this.handleIncrement} />
         </Section>
-        <Section title={'statistic:'}>
+        <Section title="statistic:">
           {total === 0 ? (
-            <Notification message={'no feedback here :('} />
+            <Notification message="no feedback here :('" />
           ) : (
             <Statistic
               good={good}
