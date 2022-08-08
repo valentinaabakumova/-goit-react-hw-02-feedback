@@ -13,9 +13,9 @@ class Interface extends Component {
 
   //1
   handleIncrement = event => {
-    const index = event.target.name;
+    const e = event.target.name;
     this.setState(prevState => {
-      return { [index]: prevState[index] + 1 };
+      return { [e]: prevState[e] + 1 };
     });
   };
 
