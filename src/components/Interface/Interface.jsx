@@ -12,20 +12,30 @@ class Interface extends Component {
   };
 
   //1
-  handleIncrement = event => {
-    const e = event.target.name;
+  // handleIncrement2 = event => {
+  //   const e = event.target.name;
+  //   this.setState(prevState => {
+  //     return { [e]: prevState[e] + 1 };
+  //   });
+  // };
+
+  handleIncrement = feedback => {
     this.setState(prevState => {
-      return { [e]: prevState[e] + 1 };
+      return { [feedback]: prevState[feedback] + 1 };
     });
   };
 
   //2
   countTotalFeedback() {
-    const arrayTotalCount = Object.values(this.state);
-    const total = arrayTotalCount.reduce((acc, typeNumber) => {
-      return acc + typeNumber;
-    }, 0);
-    return total;
+    // const arrayTotalCount = Object.values(this.state);
+    // const total = arrayTotalCount.reduce((acc, typeNumber) => {
+    //   return acc + typeNumber;
+    // }, 0);
+    // return total;
+
+    const total = Object.values(this.state);
+    const totalFeddback = total.reduce((acc, elem) => acc + elem, 0);
+    return totalFeddback;
   }
 
   //3
@@ -42,12 +52,12 @@ class Interface extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
       <>
-        <Section title={'leave feedback:'}>
+        <Section title="leave feedback:">
           <Feedback options={options} onLeaveFeedback={this.handleIncrement} />
         </Section>
         <Section title="statistic:">
           {total === 0 ? (
-            <Notification message="no feedback here :('" />
+            <Notification message="no feedback here :(" />
           ) : (
             <Statistic
               good={good}

@@ -1,19 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Text = styled.p`
-  margin-right: 20px;
-`;
-
-const TextBold = styled.p`
-  font-weight: bold;
-  margin-right: 20px;
-`;
-
-const List = styled.p`
-  display: flex;
-`;
+// import styled from 'styled-components';
+import { Text, TextBold, List } from './Statictic.styled';
 
 const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
